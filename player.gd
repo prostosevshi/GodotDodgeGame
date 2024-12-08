@@ -63,9 +63,9 @@ func _process(delta):
 		dodge_direction = Vector2(-1, -1)  # Вверх-влево
 	
 	# Если враг обнаружен, убегаем в противоположную сторону
-	
+	if dodge_direction != Vector2.ZERO:
 		# Вычисляем противоположное направление уклонения
-	var flee_direction = dodge_direction.normalized()
+		var flee_direction = -dodge_direction.normalized()
 
 		# Применяем уклонение
 		velocity = flee_direction * speed
